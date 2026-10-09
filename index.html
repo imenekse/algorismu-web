@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Algorismu Yazılım</title>
+<meta name="description" content="Algorismu Yazılım — işletmeler için bulut yazılımları. Ürünümüz: Bulut Müşavir.">
+<link rel="icon" href="data:,">
+<link rel="alternate" hreflang="tr" href="https://algorismu.com/">
+<link rel="alternate" hreflang="en" href="https://algorismu.com/?lang=en">
+<style>
+  :root{
+    --brand-900:#083640; --brand-700:#0E5A6B; --brand-500:#2A8296; --brand-100:#E3F0F2; --brand-50:#F3F8F9;
+    --ink:#1A1F24; --muted:#5B6670; --line:#DDE3E7; --bg:#FFFFFF;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:72px}
+  body{margin:0;font:16px/1.6 var(--font);color:var(--ink);background:var(--bg)}
+  a{color:var(--brand-700)}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
+  header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:1}
+  .bar{display:flex;align-items:center;gap:32px;height:64px}
+  .bar img{height:24px;display:block}
+  nav{display:flex;gap:24px;margin-left:auto;font-size:15px}
+  nav a{color:var(--ink);text-decoration:none;white-space:nowrap}
+  nav a:hover{color:var(--brand-700)}
+  .lang{display:flex;border:1px solid var(--line);border-radius:6px;overflow:hidden;font-size:13px;font-weight:600}
+  .lang a{padding:4px 10px;text-decoration:none;color:var(--muted)}
+  .lang a[aria-current]{background:var(--brand-700);color:#fff}
+  .hero{background:var(--brand-50);padding:72px 0 64px}
+  .hero h1{margin:0 0 12px;font-size:36px;line-height:1.2;color:var(--brand-900)}
+  .hero p{margin:0;max-width:560px;color:var(--muted);font-size:18px}
+  section{padding:64px 0;border-bottom:1px solid var(--line)}
+  h2{margin:0 0 24px;font-size:24px;color:var(--brand-900)}
+  section p{max-width:720px}
+  .card{border:1px solid var(--line);border-radius:10px;padding:24px;max-width:560px}
+  .card h3{margin:0 0 8px;font-size:20px}
+  .card p{margin:0 0 16px;color:var(--muted)}
+  .btn{display:inline-block;background:var(--brand-700);color:#fff;text-decoration:none;padding:10px 18px;border-radius:6px;font-weight:600}
+  .btn:hover{background:var(--brand-900)}
+  dl{display:grid;grid-template-columns:200px 1fr;gap:12px 24px;margin:0}
+  dt{color:var(--muted);font-size:14px}
+  dd{margin:0;font-weight:500;overflow-wrap:anywhere}
+  .ph{display:inline-block;border:1px dashed var(--brand-500);background:var(--brand-100);color:var(--brand-700);border-radius:4px;padding:0 8px;font-size:14px;font-weight:400}
+  details{border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin-bottom:12px}
+  summary{cursor:pointer;font-weight:600}
+  footer{padding:32px 0;color:var(--muted);font-size:14px}
+  @media (max-width:720px){
+    .wrap{padding:0 16px}
+    .bar{flex-wrap:wrap;height:auto;gap:0;padding-top:12px}
+    .bar img{height:20px}
+    .lang{margin-left:auto}
+    nav{order:3;width:100%;margin:12px -16px 0;padding:0 16px 10px;overflow-x:auto;gap:20px;font-size:14px}
+    .hero{padding:48px 0 40px}
+    .hero h1{font-size:28px}
+    section{padding:48px 0}
+    dl{grid-template-columns:1fr;gap:2px}
+    dd{margin-bottom:12px}
+  }
+</style>
+</head>
+<body>
+<header><div class="wrap bar">
+  <a href="#"><img src="logo.svg" alt="Algorismu" width="101" height="24"></a>
+  <nav>
+    <a href="#hakkimizda" data-en="About">Hakkımızda</a>
+    <a href="#urunler" data-en="Products">Ürünler</a>
+    <a href="#kunye" data-en="Company details">Şirket künyesi</a>
+    <a href="#iletisim" data-en="Contact">İletişim</a>
+    <a href="#kvkk" data-en="Privacy">KVKK</a>
+  </nav>
+  <div class="lang"><a href="?lang=tr" id="tr" hreflang="tr">TR</a><a href="?lang=en" id="en" hreflang="en">EN</a></div>
+</div></header>
+
+<main>
+<div class="hero"><div class="wrap">
+  <h1>Algorismu Yazılım</h1>
+  <p data-en="We build cloud software that makes everyday business work simpler.">İşletmelerin günlük işini kolaylaştıran bulut yazılımları geliştiriyoruz.</p>
+</div></div>
+
+<section id="hakkimizda"><div class="wrap">
+  <h2 data-en="About">Hakkımızda</h2>
+  <p data-en="Algorismu Yazılım develops web-based software for businesses. We focus on turning repetitive, error-prone office work into simple, reliable online tools.">Algorismu Yazılım, işletmeler için web tabanlı yazılımlar geliştirir. Tekrarlayan ve hataya açık ofis işlerini sade ve güvenilir çevrim içi araçlara dönüştürmeye odaklanırız.</p>
+  <p data-en="Our first product, Bulut Müşavir, is built for accounting offices. We develop and run our products in-house and work closely with the people who use them every day.">İlk ürünümüz Bulut Müşavir, mali müşavir ofisleri için tasarlandı. Ürünlerimizi kendi ekibimizle geliştirir ve işletiriz; onları her gün kullanan kişilerle yakın çalışırız.</p>
+  <p><span data-en="Founders:">Kurucular:</span> <span data-fill="ceo"><span class="ph" data-en="CEO name — pending">CEO adı — bekleniyor</span></span> <span data-en="and">ve</span> Mükremin Akbulut</p>
+</div></section>
+
+<section id="urunler"><div class="wrap">
+  <h2 data-en="Products">Ürünler</h2>
+  <div class="card">
+    <h3>Bulut Müşavir</h3>
+    <p data-en="Cloud software (SaaS) for accounting offices.">Mali müşavir ofisleri için bulut yazılımı (SaaS).</p>
+    <a class="btn" href="https://bulutmusavir.com">bulutmusavir.com →</a>
+  </div>
+</div></section>
+
+<section id="kunye"><div class="wrap">
+  <h2 data-en="Company details">Şirket künyesi</h2>
+  <dl>
+    <dt data-en="Trade name">Ticaret unvanı</dt><dd data-fill="unvan"><span class="ph" data-en="From tax certificate">Vergi levhasından</span></dd>
+    <dt data-en="Address">Adres</dt><dd data-fill="adres"><span class="ph" data-en="From tax certificate">Vergi levhasından</span></dd>
+    <dt data-en="Tax office">Vergi dairesi</dt><dd data-fill="vergi_dairesi"><span class="ph" data-en="From tax certificate">Vergi levhasından</span></dd>
+    <dt data-en="Tax number">Vergi no</dt><dd data-fill="vergi_no"><span class="ph" data-en="From tax certificate">Vergi levhasından</span></dd>
+    <dt data-en="MERSIS number">MERSİS no</dt><dd data-fill="mersis_no"><span class="ph" data-en="Pending">Bekleniyor</span></dd>
+  </dl>
+</div></section>
+
+<section id="iletisim"><div class="wrap">
+  <h2 data-en="Contact">İletişim</h2>
+  <dl>
+    <dt data-en="Email">E-posta</dt><dd><a href="mailto:info@algorismu.com">info@algorismu.com</a></dd>
+    <dt data-en="Phone">Telefon</dt><dd data-fill="telefon"><span class="ph" data-en="Pending">Bekleniyor</span></dd>
+    <dt data-en="Address">Adres</dt><dd data-fill="adres"><span class="ph" data-en="From tax certificate">Vergi levhasından</span></dd>
+  </dl>
+</div></section>
+
+<section id="kvkk"><div class="wrap">
+  <h2 data-en="Privacy">KVKK ve gizlilik</h2>
+  <details><summary data-en="Personal Data Protection Notice (KVKK)">KVKK aydınlatma metni</summary><div data-fill-html="kvkk"><p><span class="ph" data-en="Text pending">Metin bekleniyor</span></p></div></details>
+  <details><summary data-en="Privacy Policy">Gizlilik politikası</summary><div data-fill-html="gizlilik"><p><span class="ph" data-en="Text pending">Metin bekleniyor</span></p></div></details>
+</div></section>
+</main>
+
+<footer><div class="wrap">© 2026 <span data-fill="unvan"><span class="ph" data-en="Trade name — pending">Tam unvan — bekleniyor</span></span></div></footer>
+
+<script src="firma.js"></script>
+<script>
+  const en = new URLSearchParams(location.search).get('lang') === 'en';
+  document.getElementById(en ? 'en' : 'tr').setAttribute('aria-current', 'true');
+  if (en) {
+    document.documentElement.lang = 'en';
+    document.title = 'Algorismu Yazılım — Cloud software for businesses';
+    document.querySelectorAll('[data-en]').forEach(e => e.textContent = e.dataset.en);
+  }
+  const F = window.FIRMA || {};
+  document.querySelectorAll('[data-fill]').forEach(e => { if (F[e.dataset.fill]) e.textContent = F[e.dataset.fill]; });
+  document.querySelectorAll('[data-fill-html]').forEach(e => {
+    const v = F[e.dataset.fillHtml + (en ? '_en' : '_tr')];
+    if (v) e.innerHTML = v;
+  });
+</script>
+</body>
+</html>
