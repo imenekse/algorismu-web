@@ -4,184 +4,177 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Algorismu Yazılım</title>
-<link rel="icon" href="mark.svg" type="image/svg+xml">
-<meta name="description" content="Algorismu Yazılım — işletmelerin işini sadeleştiren bulut yazılımları. Ürünümüz: Bulut Müşavir.">
+<meta name="description" content="Algorismu Yazılım — işletmeler için bulut yazılımları. Ürünümüz: Bulut Müşavir.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="alternate" hreflang="tr" href="https://algorismu.com/">
 <link rel="alternate" hreflang="en" href="https://algorismu.com/?lang=en">
-<link rel="preload" href="fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-tight-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
   /* Fonts are self-hosted on purpose: no visitor IP goes to Google (KVKK). */
-  @font-face{font-family:"Geist";src:url(fonts/Geist-Variable.woff2) format("woff2");font-weight:100 900;font-display:swap}
-  @font-face{font-family:"Geist Mono";src:url(fonts/GeistMono-Variable.woff2) format("woff2");font-weight:100 900;font-display:swap}
-  :root{
-    --b950:#04212A; --b900:#062B33; --b800:#0A3F4A; --b700:#0E5A6B; --b500:#1F8A9C; --b300:#7CD3DE; --b100:#DCEFF2; --b50:#F1F8F9;
-    --ink:#0B2A31; --text:#2E4247; --muted:#62767B; --line:#E1E9EB; --bg:#FFFFFF; --soft:#F7FAFA;
-    --sans:"Geist",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-    --mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-    --r:16px;
-  }
+  @font-face{font-family:"Inter Tight";src:url(fonts/inter-tight-latin-ext-wght-normal.woff2) format("woff2");font-weight:100 900;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+  @font-face{font-family:"Inter Tight";src:url(fonts/inter-tight-latin-wght-normal.woff2) format("woff2");font-weight:100 900;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+  @font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono-latin-ext-wght-normal.woff2) format("woff2");font-weight:100 900;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+  @font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono-latin-wght-normal.woff2) format("woff2");font-weight:100 900;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+  :root{--bg:#08080A;--bg2:#0D0D11;--card:#111116;--line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.14);--t1:#F4F4F6;--t2:#A1A1AA;--t3:#6B6B76;--ac:#8B7CFF;--ac2:#4FD1FF;--sans:"Inter Tight",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth;scroll-padding-top:88px}
-  body{margin:0;font:17px/1.65 var(--sans);color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
-  a{color:inherit}
+  html{scroll-behavior:smooth;scroll-padding-top:80px}
+  body{margin:0;background:var(--bg);color:var(--t2);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
   img{display:block}
-  .wrap{max-width:1160px;margin:0 auto;padding:0 32px}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 40px}
   html[lang=en] [lang=tr], html[lang=tr] [lang=en]{display:none}
 
   /* header */
-  header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.82);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:border-color .2s}
-  header.scrolled{border-bottom-color:var(--line)}
-  .bar{display:flex;align-items:center;gap:40px;height:72px}
-  .logo img{height:30px}
-  nav.links{display:flex;gap:4px;margin-left:auto}
-  nav.links a{font-size:15px;font-weight:500;color:var(--text);text-decoration:none;padding:8px 14px;border-radius:999px;transition:background .15s,color .15s}
-  nav.links a:hover{background:var(--b50);color:var(--b700)}
-  .lang{display:inline-flex;padding:3px;background:var(--b50);border:1px solid var(--line);border-radius:999px}
-  .lang button{font:600 12px/1 var(--sans);letter-spacing:.06em;border:0;background:transparent;color:var(--muted);padding:8px 12px;border-radius:999px;cursor:pointer}
-  .lang button[aria-pressed=true]{background:#fff;color:var(--b700);box-shadow:0 1px 3px rgba(6,43,51,.14)}
+  header{position:sticky;top:0;z-index:20;background:rgba(8,8,10,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+  .bar{display:flex;align-items:center;height:64px;gap:32px}
+  .logo img{height:26px}
+  nav.links{display:flex;gap:28px;font-size:14px;margin:0 auto}
+  nav.links a{transition:color .15s} nav.links a:hover{color:var(--t1)}
+  .right{display:flex;align-items:center;gap:14px}
+  .lang{display:inline-flex;font:500 12px/1 var(--mono);border:1px solid var(--line);border-radius:8px;padding:2px}
+  .lang button{font:inherit;border:0;background:none;color:var(--t3);padding:7px 9px;border-radius:6px;cursor:pointer}
+  .lang button[aria-pressed=true]{color:var(--t1);background:rgba(255,255,255,.08)}
+  .btn{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 18px;border-radius:10px;font-weight:500;font-size:14px;transition:background .15s,border-color .15s,transform .15s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-w{background:var(--t1);color:#0A0A0B} .btn-w:hover{background:#fff}
+  .btn-o{border:1px solid var(--line2);color:var(--t1);background:rgba(255,255,255,.02)} .btn-o:hover{border-color:rgba(255,255,255,.3)}
   .menu{display:none;position:relative}
-  .menu summary{list-style:none;cursor:pointer;width:42px;height:42px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center}
+  .menu summary{list-style:none;cursor:pointer;width:40px;height:40px;border:1px solid var(--line2);border-radius:10px;display:grid;place-items:center}
   .menu summary::-webkit-details-marker{display:none}
-  .menu summary span,.menu summary span::before,.menu summary span::after{display:block;width:16px;height:2px;border-radius:2px;background:var(--ink);position:relative}
+  .menu summary span,.menu summary span::before,.menu summary span::after{display:block;width:16px;height:1.5px;background:var(--t1);position:relative;border-radius:2px}
   .menu summary span::before,.menu summary span::after{content:"";position:absolute;left:0}
   .menu summary span::before{top:-5px}.menu summary span::after{top:5px}
   .menu[open] summary span{background:transparent}
-  .menu[open] summary span::before{top:0;transform:rotate(45deg)}
-  .menu[open] summary span::after{top:0;transform:rotate(-45deg)}
-  .menu nav{position:absolute;right:0;top:52px;width:min(78vw,280px);background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:0 20px 50px -20px rgba(6,43,51,.35);padding:8px}
-  .menu nav a{display:flex;justify-content:space-between;padding:12px 14px;border-radius:10px;text-decoration:none;font-weight:500;color:var(--ink)}
-  .menu nav a small{font-family:var(--mono);color:var(--muted)}
-  .menu nav a:hover{background:var(--b50)}
+  .menu[open] summary span::before{top:0;transform:rotate(45deg)} .menu[open] summary span::after{top:0;transform:rotate(-45deg)}
+  .menu nav{position:absolute;right:0;top:50px;width:240px;background:var(--card);border:1px solid var(--line2);border-radius:14px;padding:6px;box-shadow:0 30px 60px -20px #000}
+  .menu nav a{display:block;padding:11px 14px;border-radius:9px;color:var(--t1);font-size:15px}
+  .menu nav a:hover{background:rgba(255,255,255,.05)}
 
   /* hero */
-  .hero{position:relative;overflow:hidden;background:radial-gradient(1200px 600px at 85% -10%,#0F5866 0%,transparent 60%),linear-gradient(180deg,var(--b900),var(--b950));color:#fff;padding:120px 0 128px}
-  .hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(124,211,222,.16) 1px,transparent 1px);background-size:28px 28px;mask-image:linear-gradient(90deg,transparent 30%,#000 75%);-webkit-mask-image:linear-gradient(90deg,transparent 30%,#000 75%);pointer-events:none}
-  .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
-  .eyebrow{display:inline-flex;align-items:center;gap:10px;font:500 13px/1 var(--mono);letter-spacing:.02em;color:var(--b300)}
-  .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--b300);box-shadow:0 0 0 4px rgba(124,211,222,.18)}
-  .hero h1{font-size:clamp(40px,5.6vw,68px);line-height:1.04;letter-spacing:-.035em;font-weight:600;margin:22px 0 22px;color:#fff;text-wrap:balance}
-  .hero h1 em{font-style:normal;color:var(--b300)}
-  .hero p.lead{font-size:19px;line-height:1.6;color:rgba(255,255,255,.72);max-width:520px;margin:0 0 36px}
-  .cta{display:flex;gap:12px;flex-wrap:wrap}
-  .btn{display:inline-flex;align-items:center;gap:10px;font:600 15px/1 var(--sans);text-decoration:none;padding:15px 22px;border-radius:999px;transition:transform .15s,background .15s,box-shadow .15s}
-  .btn:hover{transform:translateY(-1px)}
-  .btn-light{background:#fff;color:var(--b900)}
-  .btn-light:hover{box-shadow:0 10px 30px -10px rgba(124,211,222,.6)}
-  .btn-ghost{color:#fff;border:1px solid rgba(255,255,255,.22)}
-  .btn-ghost:hover{background:rgba(255,255,255,.08)}
-  .btn-dark{background:var(--b700);color:#fff}
-  .btn-dark:hover{background:var(--b800)}
-  .graph{width:100%;max-width:440px;justify-self:end}
-  .graph .edge{stroke:rgba(124,211,222,.28);stroke-width:1.5}
-  .graph .path{stroke:var(--b300);stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:560;stroke-dashoffset:560;animation:draw 2.4s .4s cubic-bezier(.6,0,.2,1) forwards}
-  .graph .n{fill:var(--b800);stroke:rgba(124,211,222,.45);stroke-width:1.5}
-  .graph .on{fill:var(--b300)}
-  .graph .halo{fill:rgba(124,211,222,.16);animation:pulse 3s ease-in-out infinite}
-  @keyframes draw{to{stroke-dashoffset:0}}
-  @keyframes pulse{50%{r:22}}
-  @media (prefers-reduced-motion:reduce){.graph .path{animation:none;stroke-dashoffset:0}.graph .halo{animation:none}}
+  .hero{position:relative;text-align:center;padding:120px 0 0;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(var(--line) 1px,transparent 1px) 0 0/72px 72px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/72px 72px;mask:radial-gradient(ellipse 60% 55% at 50% 30%,#000 20%,transparent 75%);-webkit-mask:radial-gradient(ellipse 60% 55% at 50% 30%,#000 20%,transparent 75%)}
+  .hero::after{content:"";position:absolute;left:50%;top:-260px;width:1100px;height:620px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(139,124,255,.32),rgba(79,209,255,.08) 60%,transparent);filter:blur(10px);pointer-events:none}
+  .hero .wrap{position:relative;z-index:1}
+  .chip{display:inline-flex;align-items:center;gap:10px;padding:6px 14px 6px 6px;border:1px solid var(--line2);border-radius:999px;font-size:13px;background:rgba(255,255,255,.03);transition:border-color .15s}
+  .chip:hover{border-color:rgba(255,255,255,.3)}
+  .chip b{font:500 11px/1 var(--mono);color:#0A0A0B;background:linear-gradient(90deg,var(--ac),var(--ac2));padding:4px 8px;border-radius:999px}
+  h1{font-size:84px;line-height:1;letter-spacing:-.04em;font-weight:600;margin:28px auto 24px;max-width:980px;background:linear-gradient(180deg,#fff 30%,#8C8C96);-webkit-background-clip:text;background-clip:text;color:transparent;text-wrap:balance}
+  .lead{font-size:20px;max-width:600px;margin:0 auto 40px}
+  .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .stage{margin:88px auto 0;max-width:1040px;border:1px solid var(--line2);border-bottom:0;border-radius:18px 18px 0 0;background:linear-gradient(180deg,#121218,#0A0A0D);padding:14px;box-shadow:0 -30px 120px -40px rgba(139,124,255,.45)}
+  .stage::before{content:"";display:block;height:1px;margin:-14px 80px 14px;background:linear-gradient(90deg,transparent,var(--ac),var(--ac2),transparent)}
+  .app{display:grid;grid-template-columns:200px 1fr;gap:14px;height:340px}
+  .side,.main{border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.015);padding:14px}
+  .side i{display:block;height:9px;border-radius:5px;background:rgba(255,255,255,.08);margin:12px 0}
+  .side i:first-child{width:60%;background:rgba(139,124,255,.5)}
+  .main{display:flex;flex-direction:column;gap:10px}
+  .main .top{display:flex;justify-content:space-between;align-items:center;padding:4px 4px 10px;border-bottom:1px solid var(--line)}
+  .main .top s{display:block;height:12px;width:140px;border-radius:6px;background:rgba(255,255,255,.16);text-decoration:none}
+  .main .top u{display:block;height:26px;width:90px;border-radius:7px;background:rgba(139,124,255,.35);text-decoration:none}
+  .rowx{display:grid;grid-template-columns:22px 1.6fr 1fr .7fr;gap:16px;align-items:center;padding:10px 4px;border-bottom:1px solid var(--line)}
+  .rowx i{width:22px;height:22px;border-radius:6px;background:rgba(255,255,255,.07)}
+  .rowx s,.rowx em{display:block;height:8px;border-radius:4px;background:rgba(255,255,255,.12);text-decoration:none}
+  .rowx em{width:60%;background:rgba(255,255,255,.07)}
+  .rowx b{justify-self:end;width:58px;height:18px;border-radius:999px;background:rgba(79,209,255,.18)}
+  .rowx b.p{background:rgba(139,124,255,.22)}
 
   /* sections */
-  section{padding:128px 0}
-  section + section{border-top:1px solid var(--line)}
-  .sec-head{display:grid;grid-template-columns:220px 1fr;gap:48px;margin-bottom:56px}
-  .num{font:500 13px/1 var(--mono);color:var(--b500);letter-spacing:.04em;padding-top:12px;display:flex;gap:12px;align-items:center;text-transform:uppercase}
-  .num::after{content:"";height:1px;flex:1;background:var(--line)}
-  h2{font-size:clamp(30px,3.6vw,44px);line-height:1.12;letter-spacing:-.03em;font-weight:600;color:var(--ink);margin:0;text-wrap:balance}
-  .sub{font-size:18px;color:var(--muted);margin:16px 0 0;max-width:620px}
-  .body{display:grid;grid-template-columns:220px 1fr;gap:48px}
-  .body > :first-child{grid-column:2}
+  section{padding:140px 0;border-top:1px solid var(--line)}
+  .eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;color:var(--ac);text-transform:uppercase}
+  h2{color:var(--t1);font-size:52px;line-height:1.05;letter-spacing:-.035em;font-weight:600;margin:16px 0 20px;text-wrap:balance}
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+  .about p{font-size:19px;margin:0 0 20px;max-width:520px}
+  .vals{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:72px}
+  .val{border-top:1px solid var(--line2);padding-top:20px}
+  .val .n{font:500 12px/1 var(--mono);color:var(--t3)}
+  .val h4{margin:14px 0 6px;color:var(--t1);font-size:18px;font-weight:500;letter-spacing:-.01em}
+  .val p{margin:0;font-size:15px;color:var(--t3)}
+  .prod{display:grid;grid-template-columns:1fr 1.15fr;gap:72px;align-items:center}
+  .prod p.d{font-size:18px;max-width:440px;margin:0 0 32px}
+  .bento{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .cell{border:1px solid var(--line);border-radius:14px;padding:24px;background:linear-gradient(180deg,rgba(255,255,255,.03),transparent)}
+  .cell.wide{grid-column:1/-1}
+  .ic{width:36px;height:36px;border-radius:9px;border:1px solid var(--line2);display:grid;place-items:center;margin-bottom:20px;color:var(--t1)}
+  .cell h4{margin:0 0 6px;color:var(--t1);font-weight:500;font-size:16px}
+  .cell p{margin:0;font-size:14px;color:var(--t3)}
 
-  /* about */
-  .about-text p{font-size:19px;line-height:1.7;margin:0 0 20px;max-width:680px;color:var(--text)}
+  /* registry */
+  .reg-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:48px}
+  .reg-head p{margin:0;max-width:360px;font-size:15px;color:var(--t3)}
+  .reg{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--bg2)}
+  .reg{gap:1px;background:var(--line)}
+  .reg > div{padding:24px;background:var(--bg2)}
+  .reg .w2{grid-column:span 2}
+  .k{font:500 11px/1 var(--mono);letter-spacing:.08em;color:var(--t3);margin-bottom:12px;text-transform:uppercase}
+  .v{color:var(--t1);font-size:15px;line-height:1.55}
+  .m{font-family:var(--mono);font-size:14px}
+  .note{font-size:13px;color:var(--t3);margin:16px 0 0}
 
-  /* product */
-  .product{position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;border-radius:28px;padding:56px;background:linear-gradient(140deg,var(--b800),var(--b950));color:#fff}
-  .product::before{content:"";position:absolute;width:520px;height:520px;right:-160px;top:-200px;border-radius:50%;background:radial-gradient(closest-side,rgba(124,211,222,.28),transparent)}
-  .product > *{position:relative}
-  .tag{display:inline-block;font:500 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--b300);border:1px solid rgba(124,211,222,.35);padding:7px 10px;border-radius:999px}
-  .product h3{font-size:clamp(30px,3.4vw,40px);letter-spacing:-.03em;line-height:1.1;font-weight:600;margin:20px 0 14px}
-  .product p{color:rgba(255,255,255,.72);font-size:18px;margin:0 0 32px;max-width:420px}
-  .window{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:16px;backdrop-filter:blur(6px)}
-  .window .dots{display:flex;gap:6px;margin-bottom:16px}
-  .window .dots i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.22)}
-  .window .row{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;background:rgba(255,255,255,.05);margin-top:8px}
-  .window .row i{flex:none;width:28px;height:28px;border-radius:8px;background:rgba(124,211,222,.25)}
-  .window .row s{display:block;height:8px;border-radius:4px;background:rgba(255,255,255,.22);text-decoration:none}
-  .window .row s + s{margin-top:7px;width:60%;background:rgba(255,255,255,.12)}
-  .window .row div{flex:1}
-  .window .row em{width:52px;height:20px;border-radius:999px;background:rgba(124,211,222,.3)}
-
-  /* registry + contact */
-  .registry{border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
-  .registry .r{display:grid;grid-template-columns:240px 1fr;gap:24px;padding:20px 28px;align-items:center}
-  .registry .r + .r{border-top:1px solid var(--line)}
-  .registry dt{font-size:14px;color:var(--muted);font-weight:500}
-  .registry dd{margin:0;color:var(--ink);font-weight:500}
-  .registry dd.mono,.registry .mono{font-family:var(--mono)}
-  .note{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--muted);margin-top:18px}
-  .note::before{content:"";flex:none;width:16px;height:16px;margin-top:3px;border-radius:50%;background:var(--b100) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M5 8.2 7 10l4-4' fill='none' stroke='%230E5A6B' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
-
-  .mail{display:inline-flex;align-items:center;gap:14px;font-size:clamp(26px,3.6vw,44px);font-weight:600;letter-spacing:-.03em;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--b100);padding-bottom:6px;transition:border-color .2s,color .2s}
-  .mail:hover{color:var(--b700);border-color:var(--b500)}
-  .mail svg{width:.7em;height:.7em;transition:transform .2s}
-  .mail:hover svg{transform:translate(3px,-3px)}
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
-  .card{padding:24px;border:1px solid var(--line);border-radius:var(--r);background:var(--soft)}
-  .card .k{font:500 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
-  .card .v{color:var(--ink);font-weight:500}
-  .card a.v{text-decoration:none}
-  .card a.v:hover{color:var(--b700)}
+  /* contact */
+  .contact{position:relative;overflow:hidden;border:1px solid var(--line2);border-radius:24px;padding:72px;background:radial-gradient(600px 300px at 85% 0%,rgba(139,124,255,.22),transparent 70%),var(--bg2);display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:end}
+  .contact h2{margin-top:16px}
+  .mail{display:inline-flex;align-items:center;gap:12px;font-size:34px;font-weight:600;letter-spacing:-.03em;color:var(--t1);border-bottom:1px solid var(--line2);padding-bottom:6px;transition:border-color .2s}
+  .mail:hover{border-color:var(--ac)}
+  .clist{display:grid;gap:12px}
+  .citem{display:flex;gap:16px;align-items:flex-start;padding:18px 20px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.02)}
+  .citem .ic{margin:0;flex:none}
 
   /* privacy */
-  .acc{border-top:1px solid var(--line)}
+  .acc{border-top:1px solid var(--line);max-width:900px}
   .acc details{border-bottom:1px solid var(--line)}
-  .acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:28px 4px;font-size:21px;font-weight:600;letter-spacing:-.015em;color:var(--ink)}
+  .acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 0;font-size:20px;font-weight:500;letter-spacing:-.015em;color:var(--t1)}
   .acc summary::-webkit-details-marker{display:none}
-  .acc summary i{flex:none;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:transform .2s,background .2s}
-  .acc summary i::before{content:"";width:9px;height:9px;border-right:2px solid var(--b700);border-bottom:2px solid var(--b700);transform:translateY(-2px) rotate(45deg)}
-  .acc details[open] summary i{transform:rotate(180deg);background:var(--b50)}
-  .acc summary:hover{color:var(--b700)}
-  .acc .content{padding:0 4px 32px;max-width:760px;color:var(--text)}
-  .acc .content p{margin:0 0 14px}
-  .acc .content ul{margin:0 0 14px;padding-left:20px}
-  .acc .content li{margin-bottom:8px}
+  .acc summary i{flex:none;width:32px;height:32px;border:1px solid var(--line2);border-radius:8px;display:grid;place-items:center;transition:transform .2s}
+  .acc summary i::before{content:"";width:8px;height:8px;border-right:1.5px solid var(--t1);border-bottom:1.5px solid var(--t1);transform:translateY(-2px) rotate(45deg)}
+  .acc details[open] summary i{transform:rotate(180deg)}
+  .acc .content{padding:0 0 32px;max-width:760px;font-size:15px;line-height:1.75}
+  .acc .content p{margin:0 0 14px} .acc .content ul{margin:0 0 14px;padding-left:20px} .acc .content li{margin-bottom:6px}
+  .acc .content strong{color:var(--t1);font-weight:500}
+  .acc .content a{color:var(--t1);text-decoration:underline;text-decoration-color:var(--line2);text-underline-offset:3px}
 
   /* footer */
-  footer{background:var(--b950);color:rgba(255,255,255,.62);padding:72px 0 40px;font-size:15px}
-  .foot{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
-  .foot img{height:30px;margin-bottom:18px}
-  .foot p{margin:0;max-width:340px}
-  .foot nav{display:grid;grid-template-columns:repeat(2,auto);gap:10px 48px;align-content:start}
-  .foot nav a{text-decoration:none;color:rgba(255,255,255,.8)}
-  .foot nav a:hover{color:#fff}
-  .legal{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:28px;font-size:14px}
+  footer{border-top:1px solid var(--line);padding:56px 0 40px}
+  .foot{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:40px;border-bottom:1px solid var(--line)}
+  .foot img{height:26px;margin-bottom:14px}
+  .foot p{margin:0;font-size:14px;color:var(--t3)}
+  .foot nav{display:grid;grid-template-columns:repeat(3,auto);gap:10px 40px;font-size:14px;align-content:start}
+  .foot nav a:hover{color:var(--t1)}
+  .legal{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:24px;font-size:13px;color:var(--t3)}
 
-  /* responsive */
-  @media (max-width:960px){
-    .hero .wrap{grid-template-columns:1fr}
-    .graph{position:absolute;right:-120px;top:-90px;width:320px;opacity:.22}
-    .sec-head,.body{grid-template-columns:1fr;gap:20px}
-    .body > :first-child{grid-column:1}
-    .product{grid-template-columns:1fr;padding:40px}
-    .cards{grid-template-columns:1fr}
+  /* tablet */
+  @media (max-width:1000px){
+    h1{font-size:64px}
+    .about,.prod,.contact{grid-template-columns:1fr;gap:40px}
+    .reg{grid-template-columns:1fr 1fr}
   }
+  /* mobil */
   @media (max-width:720px){
-    body{font-size:16px}
     .wrap{padding:0 20px}
-    .bar{height:64px;gap:12px}
-    .logo img{height:26px}
-    nav.links{display:none}
-    .lang{margin-left:auto}
+    nav.links,.right .btn{display:none}
+    .right{margin-left:auto}
     .menu{display:block}
-    .hero{padding:72px 0 80px}
-    .hero p.lead{font-size:17px}
-    section{padding:80px 0}
-    .sec-head{margin-bottom:36px}
-    .about-text p{font-size:17px}
-    .product{padding:28px;border-radius:22px}
-    .registry .r{grid-template-columns:1fr;gap:6px;padding:18px 20px}
-    .acc summary{font-size:18px;padding:22px 2px}
+    .hero{padding-top:72px}
+    h1{font-size:44px;letter-spacing:-.035em;margin:24px auto 18px}
+    .lead{font-size:17px;margin-bottom:32px}
+    .cta .btn{flex:1;justify-content:center;height:46px}
+    .stage{margin-top:56px;padding:10px;border-radius:14px 14px 0 0}
+    .stage::before{margin:-10px 40px 10px}
+    .app{grid-template-columns:1fr;height:240px}
+    .side{display:none}
+    .rowx{grid-template-columns:22px 1fr .6fr;gap:12px}
+    .rowx em{display:none}
+    section{padding:88px 0}
+    h2{font-size:34px}
+    .about p{font-size:17px}
+    .vals{grid-template-columns:1fr;gap:0;margin-top:40px}
+    .val{padding:20px 0}
+    .bento{grid-template-columns:1fr}
+    .reg-head{flex-direction:column;align-items:start;gap:0;margin-bottom:32px}
+    .reg{grid-template-columns:1fr}
+    .reg .w2{grid-column:auto}
+    .contact{padding:32px 24px;border-radius:18px;gap:32px}
+    .mail{font-size:24px}
+    .acc summary{font-size:17px;padding:22px 0}
     .foot nav{grid-template-columns:1fr 1fr;gap:10px 24px}
   }
 </style>
@@ -189,134 +182,118 @@
 <body>
 
 <header id="top"><div class="wrap bar">
-  <a class="logo" href="#top" aria-label="Algorismu"><img src="logo.svg" alt="Algorismu"></a>
+  <a class="logo" href="#top"><img src="logo.svg" alt="Algorismu"></a>
   <nav class="links">
     <a href="#hakkimizda"><span lang="tr">Hakkımızda</span><span lang="en">About</span></a>
     <a href="#urunler"><span lang="tr">Ürünler</span><span lang="en">Products</span></a>
     <a href="#kunye"><span lang="tr">Künye</span><span lang="en">Company</span></a>
-    <a href="#iletisim"><span lang="tr">İletişim</span><span lang="en">Contact</span></a>
     <a href="#gizlilik"><span lang="tr">KVKK</span><span lang="en">Privacy</span></a>
   </nav>
-  <div class="lang" role="group" aria-label="Dil / Language">
-    <button type="button" data-lang="tr" aria-pressed="true">TR</button>
-    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+  <div class="right">
+    <div class="lang" role="group" aria-label="Dil / Language"><button type="button" data-lang="tr" aria-pressed="true">TR</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+    <a class="btn btn-o" href="#iletisim"><span lang="tr">İletişim</span><span lang="en">Contact</span></a>
+    <details class="menu">
+      <summary aria-label="Menü"><span></span></summary>
+      <nav>
+        <a href="#hakkimizda"><span lang="tr">Hakkımızda</span><span lang="en">About</span></a>
+        <a href="#urunler"><span lang="tr">Ürünler</span><span lang="en">Products</span></a>
+        <a href="#kunye"><span lang="tr">Şirket künyesi</span><span lang="en">Company details</span></a>
+        <a href="#iletisim"><span lang="tr">İletişim</span><span lang="en">Contact</span></a>
+        <a href="#gizlilik"><span lang="tr">KVKK ve gizlilik</span><span lang="en">Privacy</span></a>
+      </nav>
+    </details>
   </div>
-  <details class="menu">
-    <summary aria-label="Menü"><span></span></summary>
-    <nav>
-      <a href="#hakkimizda"><span><span lang="tr">Hakkımızda</span><span lang="en">About</span></span><small>01</small></a>
-      <a href="#urunler"><span><span lang="tr">Ürünler</span><span lang="en">Products</span></span><small>02</small></a>
-      <a href="#kunye"><span><span lang="tr">Şirket künyesi</span><span lang="en">Company details</span></span><small>03</small></a>
-      <a href="#iletisim"><span><span lang="tr">İletişim</span><span lang="en">Contact</span></span><small>04</small></a>
-      <a href="#gizlilik"><span><span lang="tr">KVKK ve gizlilik</span><span lang="en">Privacy</span></span><small>05</small></a>
-    </nav>
-  </details>
 </div></header>
 
 <div class="hero"><div class="wrap">
-  <div>
-    <span class="eyebrow">Algorismu Yazılım</span>
-    <h1><span lang="tr">İşletmelerin işini <em>sadeleştiren</em> yazılımlar.</span><span lang="en">Software that makes business <em>simpler</em>.</span></h1>
-    <p class="lead"><span lang="tr">Karmaşık iş süreçlerini anlaşılır, güvenilir ve bulutta çalışan ürünlere dönüştürüyoruz.</span><span lang="en">We turn complex business processes into clear, reliable cloud products.</span></p>
-    <div class="cta">
-      <a class="btn btn-light" href="#urunler"><span lang="tr">Ürünlerimiz</span><span lang="en">Our products</span> →</a>
-      <a class="btn btn-ghost" href="#iletisim"><span lang="tr">İletişime geçin</span><span lang="en">Get in touch</span></a>
+  <a class="chip" href="#urunler"><b><span lang="tr">YENİ</span><span lang="en">NEW</span></b><span lang="tr">Bulut Müşavir yayında →</span><span lang="en">Bulut Müşavir is live →</span></a>
+  <h1><span lang="tr">Karmaşık işi,<br>sade yazılıma çeviriyoruz.</span><span lang="en">We turn complex work into simple software.</span></h1>
+  <p class="lead"><span lang="tr">Algorismu, işletmelerin günlük süreçlerini hızlı, güvenilir ve bulutta çalışan ürünlere dönüştüren bir yazılım şirketi.</span><span lang="en">Algorismu is a software company that turns everyday business processes into fast, reliable cloud products.</span></p>
+  <div class="cta"><a class="btn btn-w" href="#urunler"><span lang="tr">Ürünleri keşfet</span><span lang="en">Explore products</span> →</a><a class="btn btn-o" href="mailto:info@algorismu.com">info@algorismu.com</a></div>
+  <div class="stage" aria-hidden="true"><div class="app">
+    <div class="side"><i></i><i style="width:80%"></i><i style="width:70%"></i><i style="width:85%"></i><i style="width:55%"></i><i style="width:75%"></i></div>
+    <div class="main">
+      <div class="top"><s></s><u></u></div>
+      <div class="rowx"><i></i><s></s><em></em><b></b></div>
+      <div class="rowx"><i></i><s style="width:80%"></s><em></em><b class="p"></b></div>
+      <div class="rowx"><i></i><s style="width:65%"></s><em></em><b></b></div>
+      <div class="rowx"><i></i><s style="width:90%"></s><em></em><b class="p"></b></div>
+      <div class="rowx" style="border:0"><i></i><s style="width:70%"></s><em></em><b></b></div>
     </div>
-  </div>
-  <svg class="graph" viewBox="0 0 440 400" aria-hidden="true">
-    <g class="edge">
-      <line x1="60" y1="320" x2="150" y2="210"/><line x1="150" y1="210" x2="110" y2="90"/><line x1="150" y1="210" x2="260" y2="250"/>
-      <line x1="110" y1="90" x2="230" y2="60"/><line x1="230" y1="60" x2="260" y2="250"/><line x1="230" y1="60" x2="360" y2="130"/>
-      <line x1="260" y1="250" x2="360" y2="130"/><line x1="260" y1="250" x2="330" y2="340"/><line x1="360" y1="130" x2="400" y2="260"/>
-      <line x1="330" y1="340" x2="400" y2="260"/><line x1="60" y1="320" x2="200" y2="350"/><line x1="200" y1="350" x2="260" y2="250"/>
-    </g>
-    <path class="path" d="M60 320 150 210 260 250 360 130 400 260"/>
-    <circle class="halo" cx="400" cy="260" r="16"/>
-    <circle class="n on" cx="60" cy="320" r="7"/><circle class="n" cx="110" cy="90" r="6"/><circle class="n on" cx="150" cy="210" r="7"/>
-    <circle class="n" cx="230" cy="60" r="6"/><circle class="n on" cx="260" cy="250" r="7"/><circle class="n on" cx="360" cy="130" r="7"/>
-    <circle class="n" cx="330" cy="340" r="6"/><circle class="n" cx="200" cy="350" r="6"/><circle class="n on" cx="400" cy="260" r="9"/>
-  </svg>
+  </div></div>
 </div></div>
 
 <section id="hakkimizda"><div class="wrap">
-  <div class="sec-head">
-    <div class="num">01 · <span lang="tr">Hakkımızda</span><span lang="en">About</span></div>
-    <h2><span lang="tr">İşi anlayan, sade yazılım yapan bir ekip.</span><span lang="en">A team that understands the work and builds simple software for it.</span></h2>
+  <div class="about">
+    <div>
+      <div class="eyebrow"><span lang="tr">Hakkımızda</span><span lang="en">About</span></div>
+      <h2><span lang="tr">İşi anlayan, sade yazılım yapan bir ekip.</span><span lang="en">A team that understands the work and builds simple software for it.</span></h2>
+    </div>
+    <div style="padding-top:44px">
+      <p><span lang="tr">Algorismu, iş süreçlerini derinlemesine inceleyip bunları sade ve güvenilir yazılıma dönüştüren bir yazılım şirketidir.</span><span lang="en">Algorismu is a software company that studies business processes closely and turns them into simple, reliable software.</span></p>
+      <p><span lang="tr">İlk ürünümüz Bulut Müşavir ile mali müşavir ofislerinin günlük işini buluta taşıyoruz.</span><span lang="en">With our first product, Bulut Müşavir, we bring the daily work of accounting offices to the cloud.</span></p>
+    </div>
   </div>
-  <div class="body"><div class="about-text">
-    <p><span lang="tr">Algorismu, iş süreçlerini derinlemesine inceleyip bunları sade ve güvenilir yazılıma dönüştüren bir yazılım şirketidir.</span><span lang="en">Algorismu is a software company that studies business processes closely and turns them into simple, reliable software.</span></p>
-    <p><span lang="tr">İlk ürünümüz Bulut Müşavir ile mali müşavir ofislerinin günlük işini buluta taşıyoruz.</span><span lang="en">With our first product, Bulut Müşavir, we bring the daily work of accounting offices to the cloud.</span></p>
-  </div></div>
+  <div class="vals">
+    <div class="val"><div class="n">01</div><h4><span lang="tr">Önce işi anlamak</span><span lang="en">Understand the work first</span></h4><p><span lang="tr">Yazılımdan önce süreci öğreniriz.</span><span lang="en">We learn the process before we write software.</span></p></div>
+    <div class="val"><div class="n">02</div><h4><span lang="tr">Sade tasarım</span><span lang="en">Simple by design</span></h4><p><span lang="tr">Gereksiz adımı ürüne koymayız.</span><span lang="en">No unnecessary steps in the product.</span></p></div>
+    <div class="val"><div class="n">03</div><h4><span lang="tr">Bulutta çalışır</span><span lang="en">Runs in the cloud</span></h4><p><span lang="tr">Kurulum yok; tarayıcıdan erişilir.</span><span lang="en">No installation; open it in a browser.</span></p></div>
+  </div>
 </div></section>
 
-<section id="urunler"><div class="wrap">
-  <div class="sec-head">
-    <div class="num">02 · <span lang="tr">Ürünler</span><span lang="en">Products</span></div>
-    <h2><span lang="tr">Ürünlerimiz</span><span lang="en">Our products</span></h2>
+<section id="urunler"><div class="wrap prod">
+  <div>
+    <div class="eyebrow"><span lang="tr">Ürün · Bulut Müşavir</span><span lang="en">Product · Bulut Müşavir</span></div>
+    <h2><span lang="tr">Mali müşavir ofisleri için bulut yazılımı.</span><span lang="en">Cloud software for accounting offices.</span></h2>
+    <p class="d"><span lang="tr">Bulut Müşavir, mali müşavir ofislerinin günlük işini tek bir yerde, tarayıcıdan yönetmesi için geliştirildi.</span><span lang="en">Bulut Müşavir was built so accounting offices can manage their daily work in one place, from the browser.</span></p>
+    <a class="btn btn-w" href="https://bulutmusavir.com" target="_blank" rel="noopener">bulutmusavir.com ↗</a>
   </div>
-  <div class="product">
-    <div>
-      <span class="tag">SaaS</span>
-      <h3>Bulut Müşavir</h3>
-      <p><span lang="tr">Mali müşavir ofisleri için bulut tabanlı yazılım.</span><span lang="en">Cloud-based software for accounting offices.</span></p>
-      <a class="btn btn-light" href="https://bulutmusavir.com" target="_blank" rel="noopener">bulutmusavir.com ↗</a>
-    </div>
-    <div class="window" aria-hidden="true">
-      <div class="dots"><i></i><i></i><i></i></div>
-      <div class="row"><i></i><div><s></s><s></s></div><em></em></div>
-      <div class="row"><i></i><div><s></s><s></s></div><em></em></div>
-      <div class="row"><i></i><div><s></s><s></s></div><em></em></div>
-    </div>
+  <div class="bento">
+    <div class="cell wide"><div class="ic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11.5a3.5 3.5 0 0 1 .6-6.95A4.5 4.5 0 0 1 12.4 5a3 3 0 0 1 .1 6H3Z"/></svg></div><h4><span lang="tr">Bulutta çalışır</span><span lang="en">Runs in the cloud</span></h4><p><span lang="tr">Kurulum yok; tarayıcıdan erişilir.</span><span lang="en">No installation; open it in a browser.</span></p></div>
+    <div class="cell"><div class="ic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5 7V5a3 3 0 0 1 6 0v2"/></svg></div><h4><span lang="tr">Güvenli</span><span lang="en">Secure</span></h4><p><span lang="tr">Veriler korunur.</span><span lang="en">Your data is protected.</span></p></div>
+    <div class="cell"><div class="ic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h3l2-4 2 8 2-4h3"/></svg></div><h4><span lang="tr">Hızlı</span><span lang="en">Fast</span></h4><p><span lang="tr">Günlük işi kısaltır.</span><span lang="en">Shortens the daily work.</span></p></div>
   </div>
 </div></section>
 
 <section id="kunye"><div class="wrap">
-  <div class="sec-head">
-    <div class="num">03 · <span lang="tr">Künye</span><span lang="en">Company</span></div>
-    <div>
-      <h2><span lang="tr">Şirket künyesi</span><span lang="en">Company details</span></h2>
-      <p class="sub"><span lang="tr">Resmi şirket bilgilerimiz.</span><span lang="en">Our official company information.</span></p>
-    </div>
+  <div class="reg-head">
+    <div><div class="eyebrow"><span lang="tr">Künye</span><span lang="en">Company</span></div><h2 style="margin-bottom:0"><span lang="tr">Şirket künyesi</span><span lang="en">Company details</span></h2></div>
+    <p><span lang="tr">Resmi şirket bilgilerimiz.</span><span lang="en">Our official company information.</span></p>
   </div>
-  <div class="body"><div>
-    <dl class="registry">
-      <div class="r"><dt><span lang="tr">Ticaret unvanı</span><span lang="en">Trade name</span></dt><dd>ALGORİSMU YAZILIM ANONİM ŞİRKETİ</dd></div>
-      <div class="r"><dt><span lang="tr">Adres</span><span lang="en">Address</span></dt><dd>AKSE MAH. 69. SK. PANOROMA SİT. NO: 77 İÇ KAPI NO: 103 ÇAYIROVA/ KOCAELİ</dd></div>
-      <div class="r"><dt><span lang="tr">Vergi dairesi</span><span lang="en">Tax office</span></dt><dd>İLYASBEY</dd></div>
-      <div class="r"><dt><span lang="tr">Vergi kimlik numarası</span><span lang="en">Tax ID number</span></dt><dd class="mono">0511304504</dd></div>
-      <div class="r"><dt><span lang="tr">MERSİS numarası</span><span lang="en">MERSIS number</span></dt><dd class="mono">0051130450400001</dd></div>
-      <div class="r"><dt><span lang="tr">Ticaret sicili</span><span lang="en">Trade registry</span></dt><dd><span lang="tr">Gebze Ticaret Sicili Müdürlüğü</span><span lang="en">Gebze Trade Registry Office</span> · <span class="mono">49451</span></dd></div>
-      <div class="r"><dt><span lang="tr">Taahhüt edilen sermaye</span><span lang="en">Subscribed capital</span></dt><dd class="mono">250.000,00 TL</dd></div>
-      <div class="r"><dt><span lang="tr">Ödenen sermaye</span><span lang="en">Paid-in capital</span></dt><dd class="mono">62.500,00 TL</dd></div>
-    </dl>
-    <p class="note" lang="en">Trade name and address are shown in their official Turkish form.</p>
-  </div></div>
+  <div class="reg">
+    <div class="w2"><div class="k"><span lang="tr">Ticaret unvanı</span><span lang="en">Trade name</span></div><div class="v">ALGORİSMU YAZILIM ANONİM ŞİRKETİ</div></div>
+    <div class="w2"><div class="k"><span lang="tr">Adres</span><span lang="en">Address</span></div><div class="v">AKSE MAH. 69. SK. PANOROMA SİT. NO: 77 İÇ KAPI NO: 103 ÇAYIROVA/ KOCAELİ</div></div>
+    <div><div class="k"><span lang="tr">Vergi dairesi</span><span lang="en">Tax office</span></div><div class="v">İLYASBEY</div></div>
+    <div><div class="k"><span lang="tr">Vergi kimlik numarası</span><span lang="en">Tax ID number</span></div><div class="v m">0511304504</div></div>
+    <div><div class="k"><span lang="tr">MERSİS numarası</span><span lang="en">MERSIS number</span></div><div class="v m">0051130450400001</div></div>
+    <div><div class="k"><span lang="tr">Ticaret sicili</span><span lang="en">Trade registry</span></div><div class="v"><span lang="tr">Gebze Ticaret Sicili Müdürlüğü</span><span lang="en">Gebze Trade Registry Office</span> · <span class="m">49451</span></div></div>
+    <div><div class="k"><span lang="tr">Taahhüt edilen sermaye</span><span lang="en">Subscribed capital</span></div><div class="v m">250.000,00 TL</div></div>
+    <div><div class="k"><span lang="tr">Ödenen sermaye</span><span lang="en">Paid-in capital</span></div><div class="v m">62.500,00 TL</div></div>
+    <div><div class="k"><span lang="tr">Telefon</span><span lang="en">Phone</span></div><div class="v m"><a href="tel:+905072786462">+90 507 278 64 62</a></div></div>
+    <div><div class="k"><span lang="tr">E-posta</span><span lang="en">Email</span></div><div class="v m"><a href="mailto:info@algorismu.com">info@algorismu.com</a></div></div>
+  </div>
+  <p class="note" lang="en">Trade name and address are shown in their official Turkish form.</p>
 </div></section>
 
 <section id="iletisim"><div class="wrap">
-  <div class="sec-head">
-    <div class="num">04 · <span lang="tr">İletişim</span><span lang="en">Contact</span></div>
-    <h2><span lang="tr">Bize yazın.</span><span lang="en">Write to us.</span></h2>
-  </div>
-  <div class="body"><div>
-    <a class="mail" href="mailto:info@algorismu.com">info@algorismu.com <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
-    <div class="cards">
-      <div class="card"><div class="k"><span lang="tr">E-posta</span><span lang="en">Email</span></div><a class="v" href="mailto:info@algorismu.com">info@algorismu.com</a></div>
-      <div class="card"><div class="k"><span lang="tr">Telefon</span><span lang="en">Phone</span></div><a class="v" href="tel:+905072786462">+90 507 278 64 62</a></div>
-      <div class="card"><div class="k"><span lang="tr">Adres</span><span lang="en">Address</span></div><span class="v">AKSE MAH. 69. SK. PANOROMA SİT. NO: 77 İÇ KAPI NO: 103 ÇAYIROVA/ KOCAELİ</span></div>
+  <div class="contact">
+    <div>
+      <div class="eyebrow"><span lang="tr">İletişim</span><span lang="en">Contact</span></div>
+      <h2><span lang="tr">Bize yazın.</span><span lang="en">Write to us.</span></h2>
+      <a class="mail" href="mailto:info@algorismu.com">info@algorismu.com <svg width="22" height="22" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
     </div>
-  </div></div>
+    <div class="clist">
+      <a class="citem" href="tel:+905072786462"><span class="ic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5.5 2.5h-2a1 1 0 0 0-1 1.1A11 11 0 0 0 12.4 13.5a1 1 0 0 0 1.1-1v-2l-2.6-1.2-1.3 1.3a7.5 7.5 0 0 1-3.2-3.2l1.3-1.3Z"/></svg></span><span><span class="k" style="display:block"><span lang="tr">Telefon</span><span lang="en">Phone</span></span><span class="v m">+90 507 278 64 62</span></span></a>
+      <div class="citem"><span class="ic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 14s5-4.3 5-8A5 5 0 0 0 3 6c0 3.7 5 8 5 8Z"/><circle cx="8" cy="6" r="1.8"/></svg></span><span><span class="k" style="display:block"><span lang="tr">Adres</span><span lang="en">Address</span></span><span class="v" style="font-size:14px">AKSE MAH. 69. SK. PANOROMA SİT. NO: 77 İÇ KAPI NO: 103 ÇAYIROVA/ KOCAELİ</span></span></div>
+    </div>
+  </div>
 </div></section>
 
 <section id="gizlilik"><div class="wrap">
-  <div class="sec-head">
-    <div class="num">05 · <span lang="tr">Gizlilik</span><span lang="en">Privacy</span></div>
-    <div>
-      <h2><span lang="tr">KVKK ve gizlilik</span><span lang="en">Data protection and privacy</span></h2>
-      <p class="sub"><span lang="tr">Kişisel verilerinizi nasıl işlediğimizi şeffafça anlatıyoruz.</span><span lang="en">How we process your personal data, explained openly.</span></p>
-    </div>
-  </div>
-  <div class="body"><div class="acc">
+  <div class="eyebrow"><span lang="tr">Gizlilik</span><span lang="en">Privacy</span></div>
+  <h2><span lang="tr">KVKK ve gizlilik</span><span lang="en">Data protection and privacy</span></h2>
+  <p style="margin:0 0 40px;font-size:17px"><span lang="tr">Kişisel verilerinizi nasıl işlediğimizi şeffafça anlatıyoruz.</span><span lang="en">How we process your personal data, explained openly.</span></p>
+  <div class="acc">
     <details>
       <summary><span><span lang="tr">KVKK aydınlatma metni</span><span lang="en">Personal Data Protection Notice (KVKK)</span></span><i></i></summary>
       <div class="content" lang="tr">
@@ -379,28 +356,25 @@
         <p>Last updated: 09.10.2026</p>
       </div>
     </details>
-  </div></div>
+  </div>
 </div></section>
 
 <footer><div class="wrap">
   <div class="foot">
     <div>
-      <img src="logo-light.svg" alt="Algorismu">
-      <p><span lang="tr">İşletmelerin işini sadeleştiren yazılımlar.</span><span lang="en">Software that makes business simpler.</span></p>
+      <img src="logo.svg" alt="Algorismu">
+      <p><span lang="tr">Karmaşık işi, sade yazılıma çeviriyoruz.</span><span lang="en">We turn complex work into simple software.</span></p>
     </div>
     <nav>
       <a href="#hakkimizda"><span lang="tr">Hakkımızda</span><span lang="en">About</span></a>
       <a href="#kunye"><span lang="tr">Şirket künyesi</span><span lang="en">Company details</span></a>
+      <a href="#gizlilik"><span lang="tr">KVKK aydınlatma metni</span><span lang="en">KVKK notice</span></a>
       <a href="#urunler"><span lang="tr">Ürünler</span><span lang="en">Products</span></a>
-      <a href="#gizlilik"><span lang="tr">KVKK ve gizlilik</span><span lang="en">Privacy</span></a>
       <a href="#iletisim"><span lang="tr">İletişim</span><span lang="en">Contact</span></a>
-      <a href="mailto:info@algorismu.com">info@algorismu.com</a>
+      <a href="#gizlilik"><span lang="tr">Gizlilik politikası</span><span lang="en">Privacy policy</span></a>
     </nav>
   </div>
-  <div class="legal">
-    <span>© 2026 ALGORİSMU YAZILIM ANONİM ŞİRKETİ</span>
-    <span>algorismu.com</span>
-  </div>
+  <div class="legal"><span>© 2026 ALGORİSMU YAZILIM ANONİM ŞİRKETİ</span><span>algorismu.com</span></div>
 </div></footer>
 
 <script>
@@ -411,8 +385,6 @@
   document.querySelectorAll('.lang button').forEach(b => b.onclick = () => setLang(b.dataset.lang));
   if (new URLSearchParams(location.search).get('lang') === 'en') setLang('en');
   document.querySelectorAll('.menu nav a').forEach(a => a.onclick = () => a.closest('details').open = false);
-  const h = document.querySelector('header');
-  addEventListener('scroll', () => h.classList.toggle('scrolled', scrollY > 8), { passive: true });
 </script>
 </body>
 </html>
