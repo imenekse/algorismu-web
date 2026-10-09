@@ -94,12 +94,6 @@
 
   /* about */
   .about-text p{font-size:19px;line-height:1.7;margin:0 0 20px;max-width:680px;color:var(--text)}
-  .founders{display:grid;grid-template-columns:repeat(2,minmax(0,300px));gap:16px;margin-top:40px}
-  .person{display:flex;gap:16px;align-items:center;padding:20px;border:1px solid var(--line);border-radius:var(--r);background:var(--soft)}
-  .avatar{flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font:600 17px/1 var(--sans);color:#fff;background:linear-gradient(135deg,var(--b500),var(--b800))}
-  .avatar.empty{background:#fff;color:var(--b500);border:1.5px dashed var(--b500)}
-  .person b{display:block;font-weight:600;color:var(--ink);font-size:16px}
-  .person span.role{font-size:14px;color:var(--muted)}
 
   /* product */
   .product{position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;border-radius:28px;padding:56px;background:linear-gradient(140deg,var(--b800),var(--b950));color:#fff}
@@ -124,11 +118,9 @@
   .registry .r + .r{border-top:1px solid var(--line)}
   .registry dt{font-size:14px;color:var(--muted);font-weight:500}
   .registry dd{margin:0;color:var(--ink);font-weight:500}
-  .registry dd.mono{font-family:var(--mono)}
+  .registry dd.mono,.registry .mono{font-family:var(--mono)}
   .note{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--muted);margin-top:18px}
   .note::before{content:"";flex:none;width:16px;height:16px;margin-top:3px;border-radius:50%;background:var(--b100) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M5 8.2 7 10l4-4' fill='none' stroke='%230E5A6B' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
-  .ph{display:inline-flex;align-items:center;gap:8px;font:500 13px/1 var(--mono);color:var(--b700);background:var(--b50);border:1px dashed var(--b500);padding:7px 11px;border-radius:999px}
-  .ph::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--b500)}
 
   .mail{display:inline-flex;align-items:center;gap:14px;font-size:clamp(26px,3.6vw,44px);font-weight:600;letter-spacing:-.03em;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--b100);padding-bottom:6px;transition:border-color .2s,color .2s}
   .mail:hover{color:var(--b700);border-color:var(--b500)}
@@ -152,6 +144,8 @@
   .acc summary:hover{color:var(--b700)}
   .acc .content{padding:0 4px 32px;max-width:760px;color:var(--text)}
   .acc .content p{margin:0 0 14px}
+  .acc .content ul{margin:0 0 14px;padding-left:20px}
+  .acc .content li{margin-bottom:8px}
 
   /* footer */
   footer{background:var(--b950);color:rgba(255,255,255,.62);padding:72px 0 40px;font-size:15px}
@@ -162,8 +156,6 @@
   .foot nav a{text-decoration:none;color:rgba(255,255,255,.8)}
   .foot nav a:hover{color:#fff}
   .legal{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:28px;font-size:14px}
-  footer .ph{color:var(--b300);background:rgba(124,211,222,.08);border-color:rgba(124,211,222,.45)}
-  footer .ph::before{background:var(--b300)}
 
   /* responsive */
   @media (max-width:960px){
@@ -187,7 +179,6 @@
     section{padding:80px 0}
     .sec-head{margin-bottom:36px}
     .about-text p{font-size:17px}
-    .founders{grid-template-columns:1fr}
     .product{padding:28px;border-radius:22px}
     .registry .r{grid-template-columns:1fr;gap:6px;padding:18px 20px}
     .acc summary{font-size:18px;padding:22px 2px}
@@ -255,10 +246,6 @@
   <div class="body"><div class="about-text">
     <p><span lang="tr">Algorismu, iş süreçlerini derinlemesine inceleyip bunları sade ve güvenilir yazılıma dönüştüren bir yazılım şirketidir.</span><span lang="en">Algorismu is a software company that studies business processes closely and turns them into simple, reliable software.</span></p>
     <p><span lang="tr">İlk ürünümüz Bulut Müşavir ile mali müşavir ofislerinin günlük işini buluta taşıyoruz.</span><span lang="en">With our first product, Bulut Müşavir, we bring the daily work of accounting offices to the cloud.</span></p>
-    <div class="founders">
-      <div class="person"><div class="avatar empty" data-fill-initials="ceo">?</div><div><b data-fill="ceo"><span class="ph"><span lang="tr">Ad bekleniyor</span><span lang="en">Name pending</span></span></b><span class="role"><span lang="tr">Kurucu ortak</span><span lang="en">Co-founder</span></span></div></div>
-      <div class="person"><div class="avatar">MA</div><div><b>Mükremin Akbulut</b><span class="role"><span lang="tr">Kurucu ortak</span><span lang="en">Co-founder</span></span></div></div>
-    </div>
   </div></div>
 </div></section>
 
@@ -293,11 +280,14 @@
   </div>
   <div class="body"><div>
     <dl class="registry">
-      <div class="r"><dt><span lang="tr">Ticaret unvanı</span><span lang="en">Trade name</span></dt><dd data-fill="unvan"><span class="ph"><span lang="tr">Vergi levhasından</span><span lang="en">From tax certificate</span></span></dd></div>
-      <div class="r"><dt><span lang="tr">Adres</span><span lang="en">Address</span></dt><dd data-fill="adres"><span class="ph"><span lang="tr">Vergi levhasından</span><span lang="en">From tax certificate</span></span></dd></div>
-      <div class="r"><dt><span lang="tr">Vergi dairesi</span><span lang="en">Tax office</span></dt><dd data-fill="vergi_dairesi"><span class="ph"><span lang="tr">Vergi levhasından</span><span lang="en">From tax certificate</span></span></dd></div>
-      <div class="r"><dt><span lang="tr">Vergi numarası</span><span lang="en">Tax number</span></dt><dd class="mono" data-fill="vergi_no"><span class="ph"><span lang="tr">Vergi levhasından</span><span lang="en">From tax certificate</span></span></dd></div>
-      <div class="r"><dt><span lang="tr">MERSİS numarası</span><span lang="en">MERSIS number</span></dt><dd class="mono" data-fill="mersis_no"><span class="ph"><span lang="tr">Bekleniyor</span><span lang="en">Pending</span></span></dd></div>
+      <div class="r"><dt><span lang="tr">Ticaret unvanı</span><span lang="en">Trade name</span></dt><dd>ALGORİSMU YAZILIM ANONİM ŞİRKETİ</dd></div>
+      <div class="r"><dt><span lang="tr">Adres</span><span lang="en">Address</span></dt><dd>AKSE MAH. 69. SK. PANOROMA SİT. NO: 77 İÇ KAPI NO: 103 ÇAYIROVA/ KOCAELİ</dd></div>
+      <div class="r"><dt><span lang="tr">Vergi dairesi</span><span lang="en">Tax office</span></dt><dd>İLYASBEY</dd></div>
+      <div class="r"><dt><span lang="tr">Vergi kimlik numarası</span><span lang="en">Tax ID number</span></dt><dd class="mono">0511304504</dd></div>
+      <div class="r"><dt><span lang="tr">MERSİS numarası</span><span lang="en">MERSIS number</span></dt><dd class="mono">0051130450400001</dd></div>
+      <div class="r"><dt><span lang="tr">Ticaret sicili</span><span lang="en">Trade registry</span></dt><dd><span lang="tr">Gebze Ticaret Sicili Müdürlüğü</span><span lang="en">Gebze Trade Registry Office</span> · <span class="mono">49451</span></dd></div>
+      <div class="r"><dt><span lang="tr">Taahhüt edilen sermaye</span><span lang="en">Subscribed capital</span></dt><dd class="mono">250.000,00 TL</dd></div>
+      <div class="r"><dt><span lang="tr">Ödenen sermaye</span><span lang="en">Paid-in capital</span></dt><dd class="mono">62.500,00 TL</dd></div>
     </dl>
     <p class="note" lang="en">Trade name and address are shown in their official Turkish form.</p>
   </div></div>
@@ -312,8 +302,8 @@
     <a class="mail" href="mailto:info@algorismu.com">info@algorismu.com <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
     <div class="cards">
       <div class="card"><div class="k"><span lang="tr">E-posta</span><span lang="en">Email</span></div><a class="v" href="mailto:info@algorismu.com">info@algorismu.com</a></div>
-      <div class="card"><div class="k"><span lang="tr">Telefon</span><span lang="en">Phone</span></div><span class="v" data-fill="telefon"><span class="ph"><span lang="tr">Bekleniyor</span><span lang="en">Pending</span></span></span></div>
-      <div class="card"><div class="k"><span lang="tr">Adres</span><span lang="en">Address</span></div><span class="v" data-fill="adres"><span class="ph"><span lang="tr">Vergi levhasından</span><span lang="en">From tax certificate</span></span></span></div>
+      <div class="card"><div class="k"><span lang="tr">Telefon</span><span lang="en">Phone</span></div><a class="v" href="tel:+905072786462">+90 507 278 64 62</a></div>
+      <div class="card"><div class="k"><span lang="tr">Adres</span><span lang="en">Address</span></div><span class="v">AKSE MAH. 69. SK. PANOROMA SİT. NO: 77 İÇ KAPI NO: 103 ÇAYIROVA/ KOCAELİ</span></div>
     </div>
   </div></div>
 </div></section>
@@ -329,11 +319,65 @@
   <div class="body"><div class="acc">
     <details>
       <summary><span><span lang="tr">KVKK aydınlatma metni</span><span lang="en">Personal Data Protection Notice (KVKK)</span></span><i></i></summary>
-      <div class="content" lang="tr" data-fill-html="kvkk_tr"><p><span class="ph">Metin bekleniyor — veri sorumlusu: levhadaki unvan ve adres</span></p></div><div class="content" lang="en" data-fill-html="kvkk_en"><p><span class="ph">Text pending — data controller: trade name and address from certificate</span></p></div>
+      <div class="content" lang="tr">
+        <p>Bu metin, 6698 sayılı Kişisel Verilerin Korunması Kanunu'nun ("KVKK") 10. maddesi uyarınca, algorismu.com sitesini ziyaret eden ve bizimle iletişime geçen kişileri bilgilendirmek için hazırlanmıştır.</p>
+        <p><strong>Veri sorumlusu</strong><br>ALGORİSMU YAZILIM ANONİM ŞİRKETİ<br>AKSE MAH. 69. SK. PANOROMA SİT. NO: 77 İÇ KAPI NO: 103 ÇAYIROVA/ KOCAELİ<br>MERSİS: 0051130450400001 · E-posta: <a href="mailto:info@algorismu.com">info@algorismu.com</a></p>
+        <p><strong>Hangi kişisel verileri işliyoruz?</strong></p>
+        <ul>
+          <li>Bu sitede iletişim formu, üyelik, çerez veya analitik/izleme aracı yoktur; site sizden doğrudan bilgi toplamaz.</li>
+          <li>Siteyi ziyaret ettiğinizde, siteyi barındıran GitHub, Inc. (GitHub Pages) tarafından IP adresiniz, tarayıcı bilgisi, istenen sayfa ve erişim zamanı gibi teknik erişim kayıtları tutulur.</li>
+          <li>Bize e-posta gönderir veya telefonla ulaşırsanız; adınız, e-posta adresiniz, telefon numaranız ve mesajınızın içeriği gibi bize ilettiğiniz bilgiler.</li>
+        </ul>
+        <p><strong>İşleme amaçları ve hukuki sebepler</strong><br>Erişim kayıtları, sitenin güvenli ve kesintisiz sunulması amacıyla; iletişim bilgileri ise talebinizi yanıtlamak ve sizinle yazışmak amacıyla işlenir. Bu işleme KVKK'nın 5. maddesinin 2. fıkrasının (f) bendindeki meşru menfaat ile, talebiniz bir sözleşmenin kurulmasına ilişkinse (c) bendi hukuki sebebine dayanır.</p>
+        <p><strong>Toplama yöntemi</strong><br>Veriler, siteyi ziyaretiniz sırasında barındırma altyapısı tarafından otomatik olarak ve e-posta ya da telefonla bize ilettiğinizde tarafınızdan iletilerek elektronik ortamda toplanır.</p>
+        <p><strong>Aktarım</strong><br>Erişim kayıtları siteyi barındıran GitHub, Inc. tarafından, e-posta yazışmaları e-posta hizmetimizi sağlayan Google tarafından işlenir. Bu hizmet sağlayıcıların sunucuları yurt dışında bulunduğundan kişisel verileriniz yurt dışına aktarılmış olur; aktarım KVKK'nın 9. maddesindeki koşullar çerçevesinde yapılır. Kişisel verileriniz, yasal bir yükümlülük olmadıkça başka kimseyle paylaşılmaz.</p>
+        <p><strong>Haklarınız</strong><br>KVKK'nın 11. maddesi uyarınca; kişisel verilerinizin işlenip işlenmediğini öğrenme, işlenmişse bilgi isteme, işlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme, yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme, eksik veya yanlış işlenmişse düzeltilmesini, KVKK'daki şartlar çerçevesinde silinmesini veya yok edilmesini ve bu işlemlerin aktarıldığı üçüncü kişilere bildirilmesini isteme, münhasıran otomatik sistemlerle analiz edilmesi sonucunda aleyhinize bir sonuç çıkmasına itiraz etme ve kanuna aykırı işleme nedeniyle zarara uğramanız hâlinde zararın giderilmesini talep etme haklarına sahipsiniz.</p>
+        <p>Başvurularınızı, Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında Tebliğ'e uygun olarak yukarıdaki adrese yazılı olarak veya <a href="mailto:info@algorismu.com">info@algorismu.com</a> adresine iletebilirsiniz. Başvurunuz en geç 30 gün içinde ücretsiz olarak sonuçlandırılır.</p>
+      </div>
+      <div class="content" lang="en">
+        <p>This notice is provided under Article 10 of the Turkish Personal Data Protection Law No. 6698 ("KVKK") to inform visitors of algorismu.com and people who contact us.</p>
+        <p><strong>Data controller</strong><br>ALGORİSMU YAZILIM ANONİM ŞİRKETİ<br>AKSE MAH. 69. SK. PANOROMA SİT. NO: 77 İÇ KAPI NO: 103 ÇAYIROVA/ KOCAELİ<br>MERSIS: 0051130450400001 · Email: <a href="mailto:info@algorismu.com">info@algorismu.com</a></p>
+        <p><strong>What personal data do we process?</strong></p>
+        <ul>
+          <li>This site has no contact form, accounts, cookies or analytics/tracking tools; it does not collect information from you directly.</li>
+          <li>When you visit the site, GitHub, Inc. (GitHub Pages), which hosts it, keeps technical access logs such as your IP address, browser information, the page requested and the time of access.</li>
+          <li>If you email or call us, the information you send us, such as your name, email address, phone number and the content of your message.</li>
+        </ul>
+        <p><strong>Purposes and legal grounds</strong><br>Access logs are processed to serve the site securely and reliably; contact details are processed to answer your request and correspond with you. This processing relies on legitimate interest under Article 5(2)(f) KVKK and, where your request concerns entering into a contract, on Article 5(2)(c).</p>
+        <p><strong>How data is collected</strong><br>Data is collected electronically: automatically by the hosting infrastructure when you visit the site, and from you when you contact us by email or phone.</p>
+        <p><strong>Transfers</strong><br>Access logs are processed by GitHub, Inc., which hosts the site, and email correspondence by Google, which provides our email service. As these providers' servers are located outside Türkiye, your personal data is transferred abroad; such transfers are made within the conditions of Article 9 KVKK. Your personal data is not shared with anyone else unless required by law.</p>
+        <p><strong>Your rights</strong><br>Under Article 11 KVKK you may learn whether your personal data is processed and request information about it, learn the purpose of processing and whether it is used accordingly, know the third parties in Türkiye or abroad to whom it is transferred, request its correction if incomplete or inaccurate, request its erasure or destruction under the conditions of KVKK and the notification of these actions to such third parties, object to a result against you arising solely from automated analysis, and claim compensation for damage caused by unlawful processing.</p>
+        <p>You can send requests in writing to the address above or to <a href="mailto:info@algorismu.com">info@algorismu.com</a>, in line with the Communiqué on the Procedures and Principles of Application to the Data Controller. Requests are concluded free of charge within 30 days at the latest.</p>
+      </div>
     </details>
     <details>
       <summary><span><span lang="tr">Gizlilik politikası</span><span lang="en">Privacy policy</span></span><i></i></summary>
-      <div class="content" lang="tr" data-fill-html="gizlilik_tr"><p><span class="ph">Metin bekleniyor</span></p></div><div class="content" lang="en" data-fill-html="gizlilik_en"><p><span class="ph">Text pending</span></p></div>
+      <div class="content" lang="tr">
+        <p>Bu politika, ALGORİSMU YAZILIM ANONİM ŞİRKETİ'nin algorismu.com sitesi için geçerlidir. Bulut Müşavir ürününün kendi gizlilik koşulları ayrıca bulutmusavir.com'da yer alır.</p>
+        <ul>
+          <li><strong>Çerez ve izleme yok.</strong> Site çerez kullanmaz; analitik, reklam veya sosyal medya izleme aracı içermez.</li>
+          <li><strong>Form yok.</strong> Sitede veri girebileceğiniz bir form bulunmaz.</li>
+          <li><strong>Üçüncü taraf içerik yok.</strong> Yazı tipleri ve görseller dahil tüm dosyalar sitenin kendi sunucusundan yüklenir; ziyaretiniz sırasında başka bir hizmete istek gönderilmez.</li>
+          <li><strong>Barındırma.</strong> Site GitHub Pages üzerinde barındırılır; GitHub, Inc. güvenlik ve işletim amacıyla IP adresi gibi teknik erişim kayıtları tutar.</li>
+          <li><strong>İletişim.</strong> Bize e-posta veya telefonla ilettiğiniz bilgiler yalnızca talebinizi yanıtlamak için kullanılır.</li>
+          <li><strong>Dış bağlantılar.</strong> Sitedeki bağlantılarla gittiğiniz diğer siteler kendi gizlilik politikalarına tabidir.</li>
+        </ul>
+        <p>Kişisel verilerinizle ilgili ayrıntılar ve haklarınız KVKK aydınlatma metninde yer alır. Sorularınız için: <a href="mailto:info@algorismu.com">info@algorismu.com</a>. Bu politika değişirse güncel hâli bu sayfada yayımlanır.</p>
+        <p>Son güncelleme: 09.10.2026</p>
+      </div>
+      <div class="content" lang="en">
+        <p>This policy applies to the algorismu.com site of ALGORİSMU YAZILIM ANONİM ŞİRKETİ. The Bulut Müşavir product has its own privacy terms at bulutmusavir.com.</p>
+        <ul>
+          <li><strong>No cookies or tracking.</strong> The site sets no cookies and contains no analytics, advertising or social media tracking tools.</li>
+          <li><strong>No forms.</strong> There is no form on the site for you to enter data into.</li>
+          <li><strong>No third-party content.</strong> All files, fonts and images included, load from the site's own server; no request is sent to any other service during your visit.</li>
+          <li><strong>Hosting.</strong> The site is hosted on GitHub Pages; GitHub, Inc. keeps technical access logs, such as IP addresses, for security and operation.</li>
+          <li><strong>Contact.</strong> Information you send us by email or phone is used only to answer your request.</li>
+          <li><strong>External links.</strong> Other sites you reach through links on this site are subject to their own privacy policies.</li>
+        </ul>
+        <p>Details about your personal data and your rights are in the KVKK notice. Questions: <a href="mailto:info@algorismu.com">info@algorismu.com</a>. If this policy changes, the current version is published on this page.</p>
+        <p>Last updated: 09.10.2026</p>
+      </div>
     </details>
   </div></div>
 </div></section>
@@ -354,20 +398,12 @@
     </nav>
   </div>
   <div class="legal">
-    <span>© 2026 <span data-fill="unvan"><span class="ph"><span lang="tr">Tam unvan — levhadan</span><span lang="en">Full trade name — from certificate</span></span></span></span>
+    <span>© 2026 ALGORİSMU YAZILIM ANONİM ŞİRKETİ</span>
     <span>algorismu.com</span>
   </div>
 </div></footer>
 
-<script src="firma.js"></script>
 <script>
-  const F = window.FIRMA || {};
-  document.querySelectorAll('[data-fill]').forEach(e => { if (F[e.dataset.fill]) e.textContent = F[e.dataset.fill]; });
-  document.querySelectorAll('[data-fill-html]').forEach(e => { if (F[e.dataset.fillHtml]) e.innerHTML = F[e.dataset.fillHtml]; });
-  document.querySelectorAll('[data-fill-initials]').forEach(e => {
-    const v = F[e.dataset.fillInitials];
-    if (v) { e.textContent = v.split(/\s+/).map(w => w[0]).slice(0, 2).join('').toLocaleUpperCase('tr'); e.classList.remove('empty'); }
-  });
   const setLang = l => {
     document.documentElement.lang = l;
     document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === l));
